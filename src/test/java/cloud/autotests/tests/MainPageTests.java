@@ -5,27 +5,26 @@ import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.title;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class GeneratedTests extends TestBase {
+public class MainPageTests extends TestBase {
     @Test
     @Description("Soon to be implemented by you (or QA.GURU engineers)")
     @DisplayName("Login modal form should appear on main page")
     void generatedTest() {
-        step("Open https://habr.com/", () -> {
-            step("// todo: just add selenium action");
-        });
+        step("Open url 'https://habr.com/'", () ->
+                open("https://habr.com/"));
 
         step("Click on Profile button", () -> {
-            step("// todo: just add selenium action");
+                $("[data-test-id=menu-toggle-guest]").click();
         });
 
-        step("Login modal should be visible", () -> {
-            step("// todo: just add selenium action");
+        step("Login modal should be visibledf", () -> {
+                $(".tm-user-menu").shouldBe(visible);
         });
     }
 
